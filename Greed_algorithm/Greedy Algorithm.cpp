@@ -43,6 +43,7 @@ int main()
             }
 
             change += inc;
+            cout << endl;
         }
         
     }
