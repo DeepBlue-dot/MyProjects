@@ -16,13 +16,14 @@
 
 using namespace std;
 
-int hieght = 38, width = 160, length = 10,p =0 , px, py;
-bool apple_= true , run = false;
+int hieght = 35, width = 100, length = 20,p =0 , px, py, score=0;
+bool apple_= true , not_pause = false;
+int run = 0;
 char direction = 'r',c;
 
 vector<vector<int>> coo = {{10,10}};
 vector<int> apple_xy ={-1,-1};
-vector<int> tail = {0,0};
+
 
 int getch(void) {
     struct termios oldattr, newattr;
@@ -37,10 +38,7 @@ int getch(void) {
 }
 
 
-void game_over()
-{
 
-}
 
 
 void snake(int l)
@@ -50,6 +48,20 @@ void snake(int l)
         coo.push_back({coo[coo.size()-1][0]+1,coo[coo.size()-1][1]});
     }
 }
+void game_over()
+{
+    run = 1;
+    coo.clear();
+    coo.push_back({10,10});
+    snake(length); 
+    direction = 'r';
+    apple_=true;
+    apple_xy.clear();
+    apple_xy[0] = -1;
+    apple_xy[1] = -1;
+    not_pause = false;
+
+}
 
 void check()
 {
@@ -57,7 +69,7 @@ void check()
     {
         if(coo[i][0] < 1)
         {
-            coo[i][0] = width-1;
+            coo[i][0] = width-2;
         }
         if(coo[i][0] > width+1)
         {
@@ -65,7 +77,7 @@ void check()
         }
         if(coo[i][1] < 1)
         {
-            coo[i][1] = hieght -1;
+            coo[i][1] = hieght - 2;
         }
         if(coo[i][1] > hieght+1)
         {
@@ -92,8 +104,20 @@ void check()
                     default:
                         break;
                 }
+            score+=1;
         }
         
+    }
+    for(int p =0; p < coo.size(); p++)
+    {
+        for(int q =0; q < coo.size(); q++)
+        {
+            if(p != q && coo[p][0] == coo[q][0] && coo[p][1] == coo[q][1])
+            {
+                game_over();
+            }
+        }
+
     }
     
 }
@@ -105,37 +129,46 @@ void input()
          switch (getch())
             {
                 case 'w':
-                    if(direction != 'd' && direction != 'u' && run)
+                    if(direction != 'd' && direction != 'u' && not_pause)
                     {
                         direction = 'u';
                     }
                     break;
                 case 's':
-                    if(direction != 'd' && direction != 'u' && run)
+                    if(direction != 'd' && direction != 'u' && not_pause)
                     {
                         direction = 'd';
                     }
                     break;
                 case 'a':
-                    if(direction != 'l' && direction != 'r' && run)
+                    if(direction != 'l' && direction != 'r' && not_pause)
                     {
                         direction = 'l';
                     }
                     break;
                 case 'd':
-                    if(direction != 'l' && direction != 'r' && run)
+                    if(direction != 'l' && direction != 'r' && not_pause)
                     {
                         direction = 'r';
                     }
                     break;
                 case 'v':
-                    if(run)
+                    if(run == 0)
                     {
-                        run = false;
+                        if(not_pause)
+                        {
+                            not_pause = false;
+                        }
+                        else
+                        {
+                            not_pause = true;
+                        }
                     }
-                    else
+                    else if(run == 2)
                     {
-                        run = true;
+                        run = 0;
+                        system("clear");
+                        score = 0;
                     }
                 default:
                     break;
@@ -177,8 +210,8 @@ void apple()
         bool loop = true;
         while (loop)
         {
-            apple_xy[0] = rand() % (width-5);
-            apple_xy[1] = rand() % (hieght-5);
+            apple_xy[0] = rand() % (width-10);
+            apple_xy[1] = rand() % (hieght-10);
             for (vector e : coo)
             {
                 if(e[0] == apple_xy[0] && e[1] == apple_xy[1])
@@ -271,19 +304,31 @@ int main()
     srand(time(NULL));
     do
     {
-        if(run)
+
+        if (run == 0)
         {
-            print();
-            move();
-            check();
-            apple();
-            //cout << coo.size()-length;
+            cout << "Score: \t"<<score << endl;
+            if(not_pause)
+            {
+                print();
+                move();
+                check();
+                apple();
+                
+            }
+            else
+            {
+                print();
+                
+            }
         }
-        else
+        else if(run == 1)
         {
-            print();
-            
+            cout << "Score: \t"<<score << endl;
+            cout << "\n\t\tGAME OVER!!\n";
+            run = 2;
         }
+
         
         //sleep(0.1);
     }while (true);
