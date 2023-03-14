@@ -10,7 +10,7 @@
 
 using namespace std;
 
-int hieght = 35, width = 100, length = 10,p =0 , px, py, score=0;
+int hieght = 35, width = 100, length = 50,p =0, speed = 10, score=0;
 bool apple_= true , not_pause = false;
 int run = 0;
 char direction = 'r',c;
@@ -19,7 +19,8 @@ vector<vector<int>> coo = {{10,10}};
 vector<int> apple_xy ={-1,-1};
 
 
-int getch(void) {
+int getch(void) 
+{
     struct termios oldattr, newattr;
     int ch;
     tcgetattr( STDIN_FILENO, &oldattr );
@@ -38,6 +39,7 @@ void snake(int l)
         coo.push_back({coo[coo.size()-1][0]+1,coo[coo.size()-1][1]});
     }
 }
+
 void game_over()
 {
     run = 1;
@@ -190,21 +192,21 @@ void apple()
         bool loop = true;
         while (loop)
         {
-            apple_xy[0] = rand() % (width-10);
-            apple_xy[1] = rand() % (hieght-10);
+            apple_xy[0] = rand() % (width);
+            apple_xy[1] = rand() % (hieght);
             for (vector e : coo)
             {
                 if(e[0] == apple_xy[0] && e[1] == apple_xy[1])
                 {
-                    if(0 < apple_xy[0]  && apple_xy[0]  < width-1 && 0 < apple_xy[1]  && apple_xy[1] < hieght-1)
-                    {
-                        loop = true;
-                        break;
-                    }
+                    loop = true;
+                    break;
                 }
                 else
                 {
-                    loop = false;
+                    if(0 < apple_xy[0]  && apple_xy[0]  < width-1 && 0 < apple_xy[1]  && apple_xy[1] < hieght-1)
+                    {
+                        loop = false;
+                    }
                 }
             }
         }
@@ -217,30 +219,40 @@ void print()
 {
     for(int h = 0; h < hieght; h++)
         {
-            for (int w = 0; w < width; w++)
-            {
-                px =w;
-                py = h;
+            for (int w = 0; w < width;)
+            {           
                 if(h == 0)
                 {
                     printf("_");
+                    w++;
                 }
                 else if (h == hieght-1)
                 {
-                    if( w==0)
+                    if(w==0)
+                    {
                         printf("|");
+                        w++;
+                    }
                     else if( w==width-1)
+                    {   
                         printf("|");
+                        w++;
+                    }
                     else
+                    {
                         printf("_");
+                        w++;
+                    }
                 }
                 else if(w == 0)
                 {
                     printf("|");
+                    w++;
                 }
                 else if (w == width-1)
                 {
                     printf("|");
+                    w++;
                 }
                 else
                 {
@@ -250,11 +262,11 @@ void print()
                     {
                         if(w == x[0] && h == x[1])
                         {
-
                             printf("x");
-                            w++;                        
+                            w++; 
+                            print = false;
+                            break;                       
                         }             
-                        
                         else
                         {
                             print = true;
@@ -264,18 +276,19 @@ void print()
                     if (w == apple_xy[0] && h == apple_xy[1])
                     {
                             printf("*");
-                        
+                            w++;                        
                     }
                 
                     else if (print)
                         {
                             printf(" ");
+                            w++;
                         }
                 }
             }
             printf("\n");
         }
-    this_thread::sleep_for(chrono::microseconds(10000));
+    this_thread::sleep_for(chrono::microseconds(speed*1000));
     system("clear");
 
 }
@@ -290,7 +303,7 @@ int main()
 
         if (run == 0)
         {
-            cout << "Score: \t"<<score << endl;
+            cout << "Score: \t"<<score <<endl;
             if(not_pause)
             {
                 print();
@@ -307,7 +320,7 @@ int main()
         }
         else if(run == 1)
         {
-            cout << "Score: \t"<<score << endl;
+            cout << "Score: \t"<< score << endl;
             cout << "\n\t\tGAME OVER!!\n";
             run = 2;
         }
