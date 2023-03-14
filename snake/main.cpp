@@ -1,13 +1,7 @@
 #include <iostream>
-#include <ctime>
 #include <unistd.h>
-#include <cstdlib>
 #include <vector>
 #include <termios.h>
-#include <stdio.h>
-#include <sys/select.h>
-#include <termios.h>
-#include <stdlib.h>
 #include <thread>
 #include <chrono>
 
@@ -16,7 +10,7 @@
 
 using namespace std;
 
-int hieght = 35, width = 100, length = 20,p =0 , px, py, score=0;
+int hieght = 35, width = 100, length = 10,p =0 , px, py, score=0;
 bool apple_= true , not_pause = false;
 int run = 0;
 char direction = 'r',c;
@@ -36,10 +30,6 @@ int getch(void) {
     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
     return ch;
 }
-
-
-
-
 
 void snake(int l)
 {
@@ -67,22 +57,11 @@ void check()
 {
     for (int i=0; i < coo.size(); i++)
     {
-        if(coo[i][0] < 1)
+        if(coo[i][0] < 1 || coo[i][0] >= width-1 || coo[i][1] < 1 || coo[i][1] >= hieght-1)
         {
-            coo[i][0] = width-2;
+            game_over();
         }
-        if(coo[i][0] > width+1)
-        {
-            coo[i][0] = 1;
-        }
-        if(coo[i][1] < 1)
-        {
-            coo[i][1] = hieght - 2;
-        }
-        if(coo[i][1] > hieght+1)
-        {
-            coo[i][1] = 1;
-        }
+    
         if (coo[i][0] == apple_xy[0] && coo[i][1] == apple_xy[1])
         {
             apple_ = true;
@@ -123,30 +102,31 @@ void check()
 }
 
 
+
 void input()
 {
     do {
          switch (getch())
             {
-                case 'w':
+                case 65:
                     if(direction != 'd' && direction != 'u' && not_pause)
                     {
                         direction = 'u';
                     }
                     break;
-                case 's':
+                case 66:
                     if(direction != 'd' && direction != 'u' && not_pause)
                     {
                         direction = 'd';
                     }
                     break;
-                case 'a':
+                case 68:
                     if(direction != 'l' && direction != 'r' && not_pause)
                     {
                         direction = 'l';
                     }
                     break;
-                case 'd':
+                case 67:
                     if(direction != 'l' && direction != 'r' && not_pause)
                     {
                         direction = 'r';
@@ -216,8 +196,11 @@ void apple()
             {
                 if(e[0] == apple_xy[0] && e[1] == apple_xy[1])
                 {
-                    loop = true;
-                    break;
+                    if(0 < apple_xy[0]  && apple_xy[0]  < width-1 && 0 < apple_xy[1]  && apple_xy[1] < hieght-1)
+                    {
+                        loop = true;
+                        break;
+                    }
                 }
                 else
                 {
@@ -329,8 +312,6 @@ int main()
             run = 2;
         }
 
-        
-        //sleep(0.1);
     }while (true);
      
 
