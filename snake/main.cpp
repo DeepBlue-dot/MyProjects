@@ -4,10 +4,11 @@
 #include <termios.h>
 #include <thread>
 #include <chrono>
+#include <fstream>
 
 using namespace std;
 
-int hieght = 35, width = 100, length = 10,p =0, speed = 10, score=0;
+int hieght = 35, width = 100, length = 10,p =0, speed = 10, score=0, bestscore;
 bool apple_= true , not_pause = false;
 int run = 0;
 char direction = 'r';
@@ -23,6 +24,8 @@ void input();
 void move();
 void apple();
 void print();
+void file();
+
 
 
 int main()
@@ -30,11 +33,11 @@ int main()
     thread th1(input);
     snake(length);
     srand(time(NULL));
+    file();
     do
     {
         if (run == 0)
         {
-            cout << "Score: \t"<<score <<endl;
             if(not_pause)
             {
                 print();
@@ -51,7 +54,7 @@ int main()
         }
         else if(run == 1)
         {
-            cout << "Score: \t"<< score << endl;
+            cout << "Score: \t"<<score << "\tHigh Score: \t"<< bestscore <<endl;
             cout << "\n\t\tGAME OVER!!\n";
             run = 2;
         }
@@ -62,6 +65,7 @@ int main()
 
 void print()
 {
+    cout << "Score: \t"<<score << "\tHigh Score: \t"<< bestscore <<endl;
     for(int h = 0; h < hieght; h++)
         {
             for (int w = 0; w < width;)
@@ -304,6 +308,7 @@ void check()
 
 void game_over()
 {
+    file();
     run = 1;
     coo.clear();
     coo.push_back({10,10});
@@ -336,4 +341,30 @@ int getch(void)
     ch = getchar();
     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr);
     return ch;
+}
+
+void file()
+{
+    ifstream fin ("best_score.txt");
+    if(fin.is_open())
+    {
+        fin >> bestscore;
+    }
+    else
+    {
+        ofstream fout ("best_score.txt");
+        fout << 0;
+        bestscore = 0;
+    }
+    ofstream fout ("best_score.txt");
+    if (score > bestscore)
+    {
+        fout << score;
+        bestscore = score;
+    }
+    else
+    {
+        fout << bestscore;
+    }
+
 }
