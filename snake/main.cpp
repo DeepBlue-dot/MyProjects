@@ -8,9 +8,8 @@
 
 using namespace std;
 
-int hieght = 35, width = 100, length = 10,p =0, speed = 10, score=0, bestscore;
+int hieght = 35, width = 100, length = 10,p =0, speed = 10, score=0, bestscore, run =0;
 bool apple_= true , not_pause = false;
-int run = 0;
 char direction = 'r';
 
 vector<vector<int>> coo = {{10,10}};
@@ -345,18 +344,18 @@ int getch(void)
 
 void file()
 {
-    ifstream fin ("best_score.txt");
+    ifstream fin (".best_score.txt");
     if(fin.is_open())
     {
         fin >> bestscore;
     }
     else
     {
-        ofstream fout ("best_score.txt");
+        ofstream fout (".best_score.txt");
         fout << 0;
         bestscore = 0;
     }
-    ofstream fout ("best_score.txt");
+    ofstream fout (".best_score.txt");
     if (score > bestscore)
     {
         fout << score;
