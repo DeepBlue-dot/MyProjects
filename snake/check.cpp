@@ -22,6 +22,10 @@ void check(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &
                         break;
                     case 'r':
                         coo.push_back({coo[coo.size()-1][0]+1,coo[coo.size()-1][1]});
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> 35f04c7a8416da1efec83d934c0200fefd5abfc1
                         break;
                     case 'l':
                         coo.push_back({coo[coo.size()-1][0]-1,coo[coo.size()-1][1]});
