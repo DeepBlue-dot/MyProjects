@@ -1,6 +1,6 @@
 #include "header.h"
 
-void game(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &direction, vector<int> &apple_xy, bool &apple_, int &run, int &bestscore,int &length, bool &not_pause, float &speed)
+void game(vector<vector<int>> &coo, int &width, int &height, int &score, char &direction, vector<int> &apple_xy, bool &apple_, int &run, int &bestscore,int &length, bool &not_pause, float &speed)
 {
     thread th1(input,ref(direction), ref(not_pause), ref(score), ref(run), ref(speed));
     snake(length, coo);
@@ -12,15 +12,15 @@ void game(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &d
         {
             if(not_pause)
             {
-                print(coo, score, bestscore, hieght, width, speed, apple_xy);
+                print(coo, score, bestscore, height, width, speed, apple_xy,length);
                 move(direction,coo);
-                check(coo,width,hieght,score,direction,apple_xy,apple_,run,bestscore,length,not_pause);
-                apple(apple_,apple_xy,width,hieght,coo);
+                check(coo,width,height,score,direction,apple_xy,apple_,run,bestscore,length,not_pause);
+                apple(apple_,apple_xy,width,height,coo);
                 
             }
             else
             {
-                print(coo, score, bestscore, hieght, width, speed, apple_xy);
+                print(coo, score, bestscore, height, width, speed, apple_xy,length);
                 
             }
         }

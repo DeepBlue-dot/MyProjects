@@ -37,5 +37,6 @@ void move();
 void poll();
 char find_char (int& w,  int& h);
 bool Find(int& w,  int& h);
+void game_over();
 
 #endif

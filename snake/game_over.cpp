@@ -5,6 +5,7 @@ void game_over(vector<int> &apple_xy, int &run, vector<vector<int>> &coo, char &
     file(bestscore, score);
     run = 1;
     coo.clear();
+    length = 10;
     coo.push_back({10,10});
     snake(length, coo); 
     direction = 'r';

@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int hieght = 35, width = 100, length = 10,p =0, speed = 10, score=0, bestscore;
+int hieght = 35, width = 100, length = 10,p =0, speed = 8, score=0, bestscore;
 bool apple_= true , not_pause = false;
 int run = 0;
 char direction = 'r';
@@ -107,14 +107,14 @@ void print()
                 {
                     bool print = false;
                     
-                    for (vector x : coo)
+                    for (int i =0; i<length; i++)
                     {
-                        if(w == x[0] && h == x[1])
+                        if(w == coo[i][0] && h == coo[i][1])
                         {
-                            printf("x");
                             w++; 
-                            print = false;
-                            break;                       
+                            print = false; 
+                            printf("x");   
+                            break;                  
                         }             
                         else
                         {
@@ -288,6 +288,7 @@ void check()
                     default:
                         break;
                 }
+            length++;
             score+=1;
         }
         
@@ -315,6 +316,7 @@ void game_over()
     snake(length); 
     direction = 'r';
     apple_=true;
+    length = 10;
     apple_xy.clear();
     apple_xy[0] = -1;
     apple_xy[1] = -1;

@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/apple.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/apple.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/apple.cpp",
+  "output": "CMakeFiles/snake.dir/apple.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/check.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/check.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/check.cpp",
+  "output": "CMakeFiles/snake.dir/check.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/file.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/file.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/file.cpp",
+  "output": "CMakeFiles/snake.dir/file.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/game.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/game.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/game.cpp",
+  "output": "CMakeFiles/snake.dir/game.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/game_over.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/game_over.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/game_over.cpp",
+  "output": "CMakeFiles/snake.dir/game_over.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/getch.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/getch.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/getch.cpp",
+  "output": "CMakeFiles/snake.dir/getch.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/input.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/input.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/input.cpp",
+  "output": "CMakeFiles/snake.dir/input.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/main.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/main.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/main.cpp",
+  "output": "CMakeFiles/snake.dir/main.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/move.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/move.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/move.cpp",
+  "output": "CMakeFiles/snake.dir/move.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/print.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/print.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/print.cpp",
+  "output": "CMakeFiles/snake.dir/print.cpp.o"
+},
+{
+  "directory": "/home/yeabsira/MyProjects/cpp_project/snake/build",
+  "command": "/usr/bin/g++  -I/home/yeabsira/MyProjects/cpp_project/snake/. -g -std=gnu++14 -o CMakeFiles/snake.dir/snake.cpp.o -c /home/yeabsira/MyProjects/cpp_project/snake/snake.cpp",
+  "file": "/home/yeabsira/MyProjects/cpp_project/snake/snake.cpp",
+  "output": "CMakeFiles/snake.dir/snake.cpp.o"
+}
+]

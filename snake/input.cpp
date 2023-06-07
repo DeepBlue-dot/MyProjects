@@ -1,10 +1,6 @@
 #include "header.h"
 
-<<<<<<< HEAD
 void input(char &direction, bool &not_pause, int &score, int &run, float &speed)
-=======
-void input(char &direction, bool &not_pause, int &score, int &run)
->>>>>>> 35f04c7a8416da1efec83d934c0200fefd5abfc1
 {
     do {
          switch (getch())
@@ -54,12 +50,15 @@ void input(char &direction, bool &not_pause, int &score, int &run)
                     break;
                 case 'q':
                     system("clear");
-<<<<<<< HEAD
                     run = 3;
-=======
-                    exit(0);
->>>>>>> 35f04c7a8416da1efec83d934c0200fefd5abfc1
                     break;
+                case 'i':
+                    speed ++;
+                    break;
+                case 'o':
+                    speed --;
+                    break;
+                
                 default:
                     break;
             }

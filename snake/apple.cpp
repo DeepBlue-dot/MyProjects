@@ -1,6 +1,6 @@
 #include "header.h"
 
-void apple(bool &apple_, vector<int> &apple_xy, int &width, int &hieght, vector<vector<int>> &coo)
+void apple(bool &apple_, vector<int> &apple_xy, int &width, int &height, vector<vector<int>> &coo)
 {
     if(apple_)
     {
@@ -8,7 +8,7 @@ void apple(bool &apple_, vector<int> &apple_xy, int &width, int &hieght, vector<
         while (loop)
         {
             apple_xy[0] = rand() % (width);
-            apple_xy[1] = rand() % (hieght);
+            apple_xy[1] = rand() % (height);
             for (vector e : coo)
             {
                 if(e[0] == apple_xy[0] && e[1] == apple_xy[1])
@@ -18,7 +18,7 @@ void apple(bool &apple_, vector<int> &apple_xy, int &width, int &hieght, vector<
                 }
                 else
                 {
-                    if(0 < apple_xy[0]  && apple_xy[0]  < width-1 && 0 < apple_xy[1]  && apple_xy[1] < hieght-1)
+                    if(0 < apple_xy[0]  && apple_xy[0]  < width-1 && 0 < apple_xy[1]  && apple_xy[1] < height-1)
                     {
                         loop = false;
                     }

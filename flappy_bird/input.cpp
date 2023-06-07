@@ -18,6 +18,10 @@ void input()
                         gravity = -0.7;
                     break;
                 case 'q':
+                    exit(0);
+                    break;
+                case 'e':
+                    run = true;
                     break;
                 case 'i':
                     speed ++;

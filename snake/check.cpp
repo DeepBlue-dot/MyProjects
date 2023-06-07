@@ -1,10 +1,10 @@
 #include "header.h"
 
-void check(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &direction, vector<int> &apple_xy, bool &apple_, int &run, int &bestscore,int &length, bool &not_pause)
+void check(vector<vector<int>> &coo, int &width, int &height, int &score, char &direction, vector<int> &apple_xy, bool &apple_, int &run, int &bestscore,int &length, bool &not_pause)
 {
     for (int i=0; i < coo.size(); i++)
     {
-        if(coo[i][0] < 1 || coo[i][0] >= width-1 || coo[i][1] < 1 || coo[i][1] >= hieght-1)
+        if(coo[i][0] < 1 || coo[i][0] >= width-1 || coo[i][1] < 1 || coo[i][1] >= height-1)
         {
             game_over(apple_xy,run,coo,direction,not_pause,apple_,bestscore,score,length);
         }
@@ -22,10 +22,6 @@ void check(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &
                         break;
                     case 'r':
                         coo.push_back({coo[coo.size()-1][0]+1,coo[coo.size()-1][1]});
-<<<<<<< HEAD
-=======
-                        
->>>>>>> 35f04c7a8416da1efec83d934c0200fefd5abfc1
                         break;
                     case 'l':
                         coo.push_back({coo[coo.size()-1][0]-1,coo[coo.size()-1][1]});
@@ -33,7 +29,8 @@ void check(vector<vector<int>> &coo, int &width, int &hieght, int &score, char &
                     default:
                         break;
                 }
-            score+=1;
+            length++;
+            score++;
         }
         
     }

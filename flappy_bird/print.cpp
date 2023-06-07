@@ -4,7 +4,7 @@
 void print()
 {
     char display[height][width+1] = {' '};
-    cout << "Score: \t"<< score/29 << "\tHigh Score: \t"<< run << "\tSpeed: \t" << speed <<endl;
+    cout << "Score: \t"<< score/29 << "\tHigh Score: \t"<< bestscore << "\tSpeed: \t" << speed <<endl;
     for(int h = 0; h < height; h++)
         {
             for (int w = 0; w < width;w++)

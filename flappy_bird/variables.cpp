@@ -10,7 +10,7 @@ int space_index;
 size_t i = 0, j=0;
 
 bool start = true;
-bool run = true;
+bool run = false;
 
 vector <int> bird = {10,10};
 vector <string> border = {"<", "-"};

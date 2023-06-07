@@ -1,16 +1,29 @@
 #include "header.h"
 
-int main(void)
+
+void game()
 {
-    thread th1(input);
-    srand(time(NULL));
     poll();
     do
     {
         print();
         move();  
     } 
-    while (run);
+    while (run);   
+
+}
+
+
+int main(void)
+{
+    thread th1(input);
+    srand(time(NULL));
+    do
+    {
+        game();
+        game_over();
+    }while(true);
+
     return 0;
     
 }
