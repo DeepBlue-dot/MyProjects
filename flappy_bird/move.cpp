@@ -13,7 +13,7 @@ void move()
             wall[m][0]--;
         else
         {
-            wall[m][0]=wall[last][0]+40; 
+            wall[m][0]=wall[last][0]+41; 
             last=m;
             do
             {

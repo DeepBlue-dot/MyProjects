@@ -9,7 +9,7 @@ void poll()
     system("clear");
     for (size_t i = 0; i < 4; i++)
     {
-        wall.push_back({wall[i][0]+40,space_index});
+        wall.push_back({wall[i][0]+41,space_index});
     }
     last = wall.size()-1;
 }

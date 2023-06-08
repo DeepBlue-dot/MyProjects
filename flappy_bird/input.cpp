@@ -15,7 +15,7 @@ void input()
                     break;
                 case 32:
                     if(bird[1] > 3)
-                        gravity = -0.7;
+                        gravity = -0.72;
                     break;
                 case 'q':
                     exit(0);
