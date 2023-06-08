@@ -1,7 +1,7 @@
 
 #include "header.h"
 
-int height = 34, width = 115, length = 10,p =0, score=0, bestscore, run =0;
+int height = 33, width = 115, length = 10,p =0, score=0, bestscore, run =0;
 float speed = 15;
 bool apple_= true , not_pause = false;
 char direction = 'r'; 
