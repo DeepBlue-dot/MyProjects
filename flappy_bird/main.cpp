@@ -1,30 +1,27 @@
 #include "header.h"
 
-
 void game()
 {
-    poll();
-    do
+    print();
+    while (run)
     {
-        print();
-        move();  
-    } 
-    while (run);   
-
+        move();
+        print();        
+    }
+    
 }
-
 
 int main(void)
 {
     thread th1(input);
     srand(time(NULL));
     system("clear");
+    file(bestscore, score);
+    poll();
     do
     {
         game();
-        game_over();
-    }while(true);
+    } while (true);
 
     return 0;
-    
 }

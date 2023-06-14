@@ -9,5 +9,6 @@ void game_over()
     wall.clear();
     bird.clear();
     bird = {10,10};
-    wall={{width,height/2}};
+    wall={{width+41,height/2}};
+    poll();
 }

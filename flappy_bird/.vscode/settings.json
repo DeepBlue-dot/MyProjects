@@ -26,6 +26,6 @@
         "tuple": "cpp",
         "utility": "cpp",
         "variant": "cpp",
-        "*.inc": "cpp"
+        "*.inc": "cpp",
     }
 }

@@ -2,7 +2,6 @@
 
 void move()
 {
-    
     (gravity < 3)? gravity+=0.18: gravity=2;
     bird[1]+=gravity;
     bird[1] = (bird[1]<height-1)?  bird[1]: height-2;

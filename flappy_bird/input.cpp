@@ -16,11 +16,12 @@ void input()
                 case 32:
                     if(bird[1] > 3)
                         gravity = -0.72;
+                    k++;
                     break;
                 case 'q':
                     exit(0);
                     break;
-                case 'e':
+                case 'v':
                     run = true;
                     break;
                 case 'i':

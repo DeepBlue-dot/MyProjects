@@ -7,6 +7,7 @@
 #include <chrono>
 #include <thread>
 #include <unistd.h>
+#include <fstream>
 #include <array>
 
 
@@ -22,6 +23,7 @@ extern int bestscore;
 extern double gravity;
 extern int space_index;
 extern int last;
+extern int k;
 
 extern bool start;
 extern bool run;
@@ -29,6 +31,7 @@ extern bool run;
 extern vector <int> bird;
 extern vector <string> border;
 extern vector<vector<int>> wall;
+extern char wing[2];
 
 void print();
 int getch(void);
@@ -38,5 +41,6 @@ void poll();
 char find_char (int& w,  int& h);
 bool Find(int& w,  int& h);
 void game_over();
+void file(int &bs, int &s);
 
 #endif
