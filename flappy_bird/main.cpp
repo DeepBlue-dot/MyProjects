@@ -15,7 +15,7 @@ int main(void)
 {
     thread th1(input);
     srand(time(NULL));
-    system("clear");
+    system("clear");   
     file(bestscore, score);
     poll();
     do

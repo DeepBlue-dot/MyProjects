@@ -2,7 +2,7 @@
 
 void game_over()
 {
-    bestscore = (score/29 > bestscore)? score/29 : bestscore;
+    bestscore = (score > bestscore)? score : bestscore;
     score = 0;
     gravity = 0;
     i = 0, j=0;

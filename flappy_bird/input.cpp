@@ -31,6 +31,7 @@ void input()
                     speed --;
                     break;
                 default:
+                    run = true;
                     break;
             }
 	} while(true);
